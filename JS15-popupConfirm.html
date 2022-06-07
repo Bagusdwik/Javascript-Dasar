@@ -8,14 +8,14 @@
 </head>
 <body>
     <script>
-        const value = 90;
-        if (value>80) {
-            document.writeln("<p>Lulus</p>"); //Pernyataan benar pada kondisi 1
-        }else if(value>60){
-            document.writeln("<p>Mengulang</p>"); //Pernyataan benar pada kondisi 2
+        const masuk = confirm("Anda yakin mau masuk?");
+        if (masuk) {
+            const nama = prompt("Siapa nama anda?");
+            alert(`Hallo ${nama}, Selamat Datang`);
         }else{
-            document.writeln("<p>Gagal</p>"); //Pernyataan salah
+            alert("Selamat tinggal");
         }
+
     </script>
 </body>
 </html>
