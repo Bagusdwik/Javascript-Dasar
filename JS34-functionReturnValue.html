@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function nama(namaDepan, namaBelakang) {
+            const say = `Hallo ${namaDepan} ${namaBelakang}`;
+            return say;
+        }
+        const hasil = nama("Bagus D.", "Kurniawan");
+        document.writeln(`<p>${hasil}</p>`); //Hallo Bagus D. Kurniawan
+
+        function nilaiUjian(nilai) {
+            if (nilai>90) {
+                return "A";
+            }else if(nilai > 80){
+                return "B"
+            }else if (nilai > 70){
+                return "C"
+            }else if(nilai > 60){
+                return "D"
+            }else{
+                return "E"
+            }
+        }
+        const huruf = nilaiUjian(85);
+        document.writeln(`<p>${huruf}</p>`); //B
+
+        function carinilai(array, nilaiTarget) {
+            for (const iterator of array) {
+                if (iterator == nilaiTarget) {
+                    return iterator;
+                }
+            }
+        return false;
+        }
+        const data = carinilai([1,2,3,4,5,6,7,8], 8);
+        document.writeln(`<p>${data}</p>`);
+    </script>
+</body>
+</html>
