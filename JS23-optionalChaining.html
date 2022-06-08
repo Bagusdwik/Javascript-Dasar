@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optional Chaining</title>
+</head>
+<body>
+    <!-- 
+        Optional chaining operator
+        - Optional chaining operator (?) merupakan operator yang digunakan untuk mengamankan ketika kita
+        ingin mengakses property sebuah object dari data nullish
+        - Jika kita mencoba mengakses property dari sebuah object dari data nullish tanpa menggunakan 
+        Optional chaining operator, maka terjadi operator
+     -->
+
+     <script>
+         let person = {
+             address: {
+                 kecamatan: "Gempol"
+             }
+         }
+         let country = person?.address?.kecamatan;
+         console.log(country); //Gempol
+     </script>
+</body>
+</html>
