@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>closur</title>
+</head>
+<body>
+    <!-- 
+        Closure
+        - Kombinasi function dan bundel referensi ke data disekitarnya
+
+     -->
+    <script>
+        function createAdder(value) {
+            const owner = "Bagus";
+            function add(params) {
+                console.log(owner)
+                return value + params;
+            }
+            return add;
+        }
+        const sum = createAdder(2);
+        console.log(sum(2));
+    </script>
+</body>
+</html>

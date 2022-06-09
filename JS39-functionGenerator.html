@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        Function Generator
+        - function yang digunakan untuk membuat data generator
+        - generator adalah data yang bisa di interasi sperti array
+        - untuk membuat function generator, kita perlu menggunakan tanda *{bintang} setelah kata function
+        - dan untuk mengembalikan data di tiap iterasi, kita bisa gunakan kata kunci yield diikuti datanya 
+     -->
+    <script>
+        // kode generator sederhana
+        function* name() {
+            yield "Bagus Dwi Kurniawan";
+            yield "Agbar Prasetyo";
+            yield "Alfan Indra Kusuma";
+        }
+        const names = name();
+        for (const iterator of names) {
+            console.log(iterator);
+        }
+        // Bagus Dwi Kurniawan
+        // Agbar Prasetyo
+        // Alfan Indra Kusuma
+
+        // Kode genertaor ganjil
+        function* ganjil(value) {
+            for (let i = 1; i < value; i++) {
+                if (i%2 == 1) {
+                    yield i;
+                }
+            }
+        }
+        const number = ganjil(100);
+        for (const angka of number) {
+            console.log(angka);
+        }
+    </script>
+</body>
+</html>
