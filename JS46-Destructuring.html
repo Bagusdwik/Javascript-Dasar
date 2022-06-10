@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring</title>
+</head>
+<body>
+    <!-- 
+        - Destructuirng adalah fitur yang bisa digunakan untuk membongkar value-value
+        di array atau object ke dalam variable-variable
+        - fitur ini sangat mempermudah kita ketika ingin mengambil data dari array atau object tanpa 
+        harus melakukan pengambilan data satu persatu
+     -->
+     <script>
+        //  in Array
+         const nama = ["Bagus","Dwi","Kurniawan","Naili","Saadah"];
+         const [firstName, middleName, lastName, ...others] = nama; //Destructuring
+
+         console.info(firstName);
+         console.info(middleName);
+         console.info(lastName);
+         console.info(others); //(2) ['Naili', 'Saadah']
+
+        //  in object
+        const person = {
+            namaDepan: "Bagus Dwi",
+            namaBelakang: "Kurniawan",
+            alamat: {
+                desa: "Putat",
+                kelurahan: "Ngerong",
+                kecamatan: "Gempol"
+            },
+            jenis: "L",
+            agama: "Islam"
+        };
+        const {namaDepan, namaBelakang, alamat: {desa, kecamatan}, jenis, agama} = person;
+        console.info(namaDepan, namaBelakang, desa, kecamatan, jenis, agama); //Bagus Dwi Kurniawan Putat Gempol L Islam
+
+        // in function parameter
+        function sum([first, second]) {
+            return first + second; 
+        }
+        console.log(sum([1,2])); //3
+
+        // default value destructuring array
+        const buah = ["apel", "manggis", "alpukat"];
+        const [buah0 , buah1, buah2 , buah3 = "jeruk"] = buah;
+
+        console.log(buah1);
+        console.log(buah2);
+        console.log(buah3);
+        console.log(buah0);
+
+        // merubah nama variabel
+        const kucing = {
+            nama: "Brocing",
+            ras: "Persia",
+            mata: "hiijau"
+        }
+
+        const {
+            nama: name, //merubah nama variable nama menjadi name
+            ras: gen, //merubah nama variable ras menjadi gen
+            mata
+        } = kucing;
+
+        console.info(name); //Brocing
+        console.info(gen); // Persia
+        console.info(mata); //hijau
+     </script>
+</body>
+</html>
