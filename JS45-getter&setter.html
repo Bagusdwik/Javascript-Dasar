@@ -14,7 +14,31 @@
         diakses atau diubah, misal menambah validasi dan lain-lain
      -->
      <script>
-         
+         const person = {
+             namaDepan: "Bagus",
+             namaBelakang: "Kurniawan",
+             //  getter
+             get fullName(){
+                 return `${this.namaDepan} ${this.namaBelakang}`
+             },
+             //  setter
+             set fullName(value){
+                const bagus = value.split(" ");
+                this.namaDepan = bagus[0];
+                this.namaBelakang = bagus[1];
+             }
+         }
+
+         person.fullName = "Bagus Dwi";
+         console.table(person);
+
+         person.fullName = "Della Muawwanah";
+         console.table(person);
+
+        //  console.log(person.fullName);
+
+        
+
      </script>
 </body>
 </html>
